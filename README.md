@@ -11,6 +11,16 @@ Further explanations of seam carving can be found on this <a href="https://andre
 
 ```Seam-Carving.ipynb``` provides an implementation of photo seam carving in Python, with edges found through Sobel filters or the Laplacian operator. 
 
+### Functionality
+
+<img src="resizedWinter1946.jpg" height=250><img src="Winter1946.gif" height=250>
+
+*Conventional resizing (left) vs. seam carving (right)*
+
+Standard approaches to image resizing typically involve either compression, which causes distortions (above left) or cropping, which loses information. Seam carving (above right) reduces both distortion and minimozes information loss.
+
+The algorithm works in two stages. First, it finds a map of information importance for the target image. This is frequently an edge map, as is the case in this implementation. The edge map in this notebook can be found either with Sobel filters (a kind of convolution) or with the Laplacian operator. We can consider these methods as finding the first and second derivative of brightness in the image, respectively. Once an importance map is found, the algorithm uses dynamic programming to build a minimal importance vertical cut/seam in the image, which is then removed.
+
 ### Acknowledgements
 
 ```
