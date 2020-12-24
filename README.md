@@ -17,9 +17,9 @@ Further explanations of seam carving can be found on this <a href="https://andre
 
 *Conventional resizing (left) vs. seam carving (right)*
 
-Standard approaches to image resizing typically involve either compression, which causes distortions (above left) or cropping, which loses information. Seam carving (above right) reduces both distortion and minimozes information loss.
+Standard approaches to image resizing typically involve either compression, which causes distortions (above left) or cropping, which loses information. Seam carving (above right) reduces both distortion and minimizes information loss.
 
-The algorithm works in two stages. First, it finds a map of information importance for the target image. This is frequently an edge map, as is the case in this implementation. The edge map in this notebook can be found either with Sobel filters (a kind of convolution) or with the Laplacian operator. We can consider these methods as finding the first and second derivative of brightness in the image, respectively. Once an importance map is found, the algorithm uses dynamic programming to build a minimal importance vertical cut/seam in the image, which is then removed.
+The algorithm works in two stages. First, it finds a map of pixelwise information importance for the target image. This frequently takes the form of an edge map, as is the case in this implementation. The edge map in this notebook can be found either with Sobel filters (a kind of convolution) or with the Laplacian operator. We can consider these methods as finding the first and second derivative of brightness in the image, respectively. Once an importance map is found, the algorithm uses dynamic programming to build a minimal importance vertical cut/seam in the image, which is then removed.
 
 ### Acknowledgements
 
